@@ -88,3 +88,17 @@ Run your build process with `npm run dev`or whatever command is configured in yo
 npm run dev
 ```
 
+### Note:
+To run your json file, 
+
+1) Install json-server globally.
+
+```bash
+npm install -g json-server
+```
+
+2) Run the following command in the terminal.
+
+```bash
+json-server ./src/data/data.json --port 3001
+```

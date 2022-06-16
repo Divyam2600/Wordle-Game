@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .box {
+    @apply block w-14 h-14 border-[1px] border-gray-400 m-1 font-bold text-4xl uppercase text-center p-[5px];
+  }
+  .row {
+    @apply text-center flex justify-center;
+  }
+  .keypad {
+    @apply max-w-lg m-auto mb-2;
+  }
+  .key {
+    @apply m-1 uppercase w-10 h-14  bg-gray-200 inline-block rounded-lg font-semibold text-lg;
+  }
+  .modal {
+    @apply bg-white p-10 shadow-lg text-lg drop-shadow-lg rounded-2xl max-w-md w-11/12;
+  }
+}
+
+/* font family - verdana in app.js 1st div */
+
+.row > div.green {
+  --background: #5bc85b;
+  --border-color: #5bc85b;
+  animation: flip 0.5s ease forwards;
+}
+.row > div.grey {
+  --background: #646363;
+  --border-color: #646363;
+  animation: flip 0.6s ease forwards;
+}
+.row > div.yellow {
+  --background: #e6c52ee9;
+  --border-color: #e6c52ee9;
+  animation: flip 0.5s ease forwards;
+}
+.row > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.row > div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.row > div:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.row > div:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.row.current > div.filled {
+  animation: bounce 0.2s ease-in-out forwards;
+}
+
+.keypad > p > button.green {
+  background: #5bc85b;
+  color: #fff;
+  transition: all 0.3s ease-in;
+}
+.keypad > p > button.yellow {
+  background: #e6c52ee9;
+  color: #fff;
+  transition: all 0.3s ease-in;
+}
+.keypad > p > button.grey {
+  background: #646363;
+  color: #fff;
+  transition: all 0.3s ease-in;
+}
+
+/* keyframe animations */
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+    background: #fff;
+    border-color: #333;
+  }
+  45% {
+    transform: rotateX(90deg);
+    background: #fff;
+    border-color: #333;
+  }
+  55% {
+    transform: rotateX(90deg);
+    background: var(--background);
+    border-color: var(--border-color);
+  }
+  100% {
+    transform: rotateX(0deg);
+    background: var(--background);
+    border-color: var(--border-color);
+    color: #fff;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+    border-color: #fff;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    border-color: #333;
+  }
+}

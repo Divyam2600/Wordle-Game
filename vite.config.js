@@ -7,7 +7,6 @@ export default defineConfig({
     react(),
     mix({
       handler: "./api.js",
-      adapter: vercelAdapter(),
     }),
   ],
 });

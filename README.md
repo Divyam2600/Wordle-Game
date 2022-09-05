@@ -93,19 +93,3 @@ Run your build process with `npm run dev`or whatever command is configured in yo
 ```bash
 npm run dev
 ```
-
-### Note
-
-Remember to Edit the Api endpoints for your local server to: ,
-
-1) In `Keypad.jsx`.
-
-```bash
-fetch("http://127.0.0.1:5173/api/letters")
-```
-
-2) In `App.jsx`.
-
-```bash
-fetch("http://127.0.0.1:5173/api/solutions")
-```

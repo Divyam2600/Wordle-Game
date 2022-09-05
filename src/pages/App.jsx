@@ -5,7 +5,7 @@ function App() {
   const [solution, setSolution] = useState(null);
 
   useEffect(() => {
-    fetch("https://wordle-game-five.vercel.app/api/solutions")
+    fetch("http://127.0.0.1:5173/api/solutions")
       .then((res) => res.json())
       .then((json) => {
         // Random number between 0-19

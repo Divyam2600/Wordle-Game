@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import useWordle from "../hooks/useWordle";
 
 function Keypad({ usedKeys }) {
   const [letters, setLetters] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:3001/letters")
+    fetch("http://localhost:3005/letters")
       .then((res) => res.json())
       .then((json) => {
         setLetters(json);
